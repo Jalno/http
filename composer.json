@@ -1,0 +1,28 @@
+{
+	"name": "jalno/http",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Jalno\\Http\\": "src/"
+		}
+	},
+	"require": {
+		"php": "^7.4||^8.0",
+		"dnj/local-filesystem": "^1.0"
+	},
+	"require-dev": {
+		"phpstan/phpstan": "^1.4.1",
+		"friendsofphp/php-cs-fixer": "^3.1"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"scripts": {
+		"test:types": "vendor/bin/phpstan analyze",
+		"test:codestyle": "vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no",
+		"test": [
+			"@test:types",
+			"@test:codestyle"
+		]
+	}
+}
